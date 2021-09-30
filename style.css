@@ -1,0 +1,27 @@
+:root {
+  --color-purple: #8f12fd;
+  --color-grey: #d4d4d4;
+  --color-black: #29044a;
+
+  --cursor-width: 80px;
+  --shadow-width: 10px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+div.cursor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: var(--cursor-width);
+  height: var(--cursor-width);
+  background-color: var(--color-black);
+  border-radius: 50%;
+}
