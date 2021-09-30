@@ -3,7 +3,8 @@
   --color-grey: #d4d4d4;
   --color-black: #29044a;
 
-  --cursor-width: 80px;
+  --cursor-lg-width: 80px;
+  --cursor-sm-width: 10px;
   --shadow-width: 10px;
 }
 
@@ -11,17 +12,34 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.5;
+  height: 100vh;
+  cursor: none;
 }
 
 div.cursor {
   position: absolute;
   top: 50%;
   left: 50%;
-
   transform: translate(-50%, -50%);
 
-  width: var(--cursor-width);
-  height: var(--cursor-width);
+  width: var(--cursor-sm-width);
+  height: var(--cursor-sm-width);
   background-color: var(--color-black);
   border-radius: 50%;
+
+  transition: width 0.25s, height 0.25s;
+}
+
+div.cursor.is-down {
+  width: var(--cursor-lg-width);
+  height: var(--cursor-lg-width);
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
 }
